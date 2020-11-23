@@ -1,18 +1,70 @@
 <!DOCTYPE html>
 <meta charset="utf-8" />
 <title>Fine-Tuned CNN Results</title>
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Mayan Agarwal</title>
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+  />
+  <!-- Bootstrap core CSS -->
+  <link
+    href="{{ url_for('static', filename='css/bootstrap.min.css')}}"
+    rel="stylesheet"
+  />
+  <!-- Material Design Bootstrap -->
+  <link
+    href="{{ url_for('static', filename='css/mdb.min.css')}}"
+    rel="stylesheet"
+  />
+  <!-- Your custom styles (optional) -->
+  <link
+    href="{{ url_for('static', filename='css/style.min.css')}}"
+    rel="stylesheet"
+  />
+  <style type="text/css">
+    /* Necessary for full page carousel*/
+    html,
+    body,
+    header,
+    .view {
+      height: 100%;
+    }
+
+    /* Carousel*/
+    .carousel,
+    .carousel-item,
+    .carousel-item.active {
+      height: 100%;
+    }
+    .carousel-inner {
+      height: 100%;
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1c2331 !important;
+      }
+    }
+  </style>
+</head>
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename='dash_files/style/style.css')}}"
 />
 
 <body class="page_upload_body">
-  <div class="container" id="page_upload">
+  <!-- BEFOREEE -->
+  <!-- <div class="container" id="page_upload">
     <h1>Deepfake Detection Using YOLOv5</h1>
     <h2>Upload a video and check weather it is a Sythetic Media:</h2>
-    <!--  -->
-    <!-- UPLOAD FORM -->
-
     <form
       id="container_image_upload_form"
       action="/upload"
@@ -29,6 +81,106 @@
         />
       </div>
     </form>
+  </div> -->
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+      <!-- Brand -->
+      <a class="navbar-brand" href="">
+        <strong>Facial Forgery Detection</strong>
+      </a>
+
+      <!-- Collapse -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a
+              href="https://www.facebook.com/mayanagarwal"
+              class="nav-link"
+              target="_blank"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://github.com/mayanagarwal/COM_COM_000166-Deepfake-Detection"
+              class="nav-link border border-light rounded waves-effect waves-light"
+              target="_blank"
+            >
+              <i class="fab fa-github mr-2"></i>GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+  <!-- data-ride="carousel" -->
+  <!--Carousel Wrapper-->
+  <div id="carousel-example-1z" class="carousel slide carousel-fade">
+    <div class="carousel-item active">
+      <div class="view">
+        <!--Video source-->
+        <video class="video-intro" autoplay loop muted>
+          <source src="https://mdbootstrap.com/img/video/Lines.mp4""
+          type="video/mp4" />
+        </video>
+
+        <div
+          class="mask rgba-black-light d-flex justify-content-center align-items-center"
+        >
+          <div class="text-center white-text mx-5 wow fadeIn">
+            <h1 class="mb-4">
+              <strong>Facial Forgery Detection Using YOLOv5</strong>
+            </h1>
+            <p class="mb-4 d-none d-md-block">
+              <strong>Frame by Frame Marking on your Video</strong>
+            </p>
+            <form
+              id="container_image_upload_form"
+              action="/upload"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <div>
+                <input name="data_file" type="file" id="upload_image" />
+                <input
+                  class="btn btn-outline-white btn-lg"
+                  type="submit"
+                  value="Upload"
+                  id="upload_button"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   {% for category, message in get_flashed_messages(with_categories=True) %}
   <div class="alert-{{category}}">Message: {{ message }}</div>
@@ -37,6 +189,31 @@
 <!--  -->
 <!-- JS -->
 <script src="{{ url_for('static', filename='dash_files/js/jquery-1.12.3.min.js')}}"></script>
+<!-- JQuery -->
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename='js/jquery-3.4.1.min.js')}}"
+></script>
+<!-- Bootstrap tooltips -->
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename='js/popper.min.js')}}"
+></script>
+<!-- Bootstrap core JavaScript -->
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename='js/bootstrap.min.js')}}"
+></script>
+<!-- MDB core JavaScript -->
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename='js/mdb.min.js')}}"
+></script>
+<!-- Initializations -->
+<script type="text/javascript">
+  // Animations initialization
+  new WOW().init();
+</script>
 <script type="text/javascript">
   $(document).ready(function () {
     // // activate submit button once file selected
