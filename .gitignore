@@ -1,14 +1,14 @@
 # Repo-specific GitIgnore ----------------------------------------------------------------------------------------------
 *.jpg
 *.jpeg
-# *.png
+*.png
 *.bmp
 *.tif
 *.tiff
 *.heic
 *.JPG
 *.JPEG
-# *.PNG
+*.PNG
 *.BMP
 *.TIF
 *.TIFF
@@ -46,13 +46,13 @@ gcp_test*.sh
 !targets*.mat
 
 # Neural Network weights -----------------------------------------------------------------------------------------------
-# *.weights
-# *.pt
-# *.onnx
-# *.mlmodel
-# *.torchscript
-# darknet53.conv.74
-# yolov3-tiny.conv.15
+*.weights
+*.pt
+*.onnx
+*.mlmodel
+*.torchscript
+darknet53.conv.74
+yolov3-tiny.conv.15
 
 # GitHub Python GitIgnore ----------------------------------------------------------------------------------------------
 # Byte-compiled / optimized / DLL files
